@@ -19,16 +19,15 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Install Liquibase CLI
+      - name: Download and extract Liquibase CLI
         run: |
           curl -sL https://github.com/liquibase/liquibase/releases/download/v4.24.0/liquibase-4.24.0.tar.gz -o liquibase.tar.gz
           mkdir liquibase-cli
           tar -xzf liquibase.tar.gz -C liquibase-cli
-          sudo mv liquibase-cli/liquibase /usr/local/bin/liquibase
 
       - name: Run Liquibase Update on Snowflake
         run: |
-          liquibase \
+          ./liquibase-cli/liquibase \
             --url="${{ secrets.SF_URL }}?warehouse=${{ secrets.SF_WAREHOUSE }}&db=${{ secrets.SF_DATABASE }}&schema=${{ secrets.SF_SCHEMA }}&role=${{ secrets.SF_ROLE }}" \
             --username="${{ secrets.SF_USER }}" \
             --password="${{ secrets.SF_PASSWORD }}" \
