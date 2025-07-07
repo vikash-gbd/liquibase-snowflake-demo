@@ -21,8 +21,10 @@ jobs:
 
       - name: Install Liquibase CLI
         run: |
-          curl -sL https://github.com/liquibase/liquibase/releases/download/v4.24.0/liquibase-4.24.0.tar.gz | tar xz
-          sudo mv liquibase /usr/local/bin/liquibase
+          curl -sL https://github.com/liquibase/liquibase/releases/download/v4.24.0/liquibase-4.24.0.tar.gz -o liquibase.tar.gz
+          mkdir liquibase-cli
+          tar -xzf liquibase.tar.gz -C liquibase-cli
+          sudo mv liquibase-cli/liquibase /usr/local/bin/liquibase
 
       - name: Run Liquibase Update on Snowflake
         run: |
