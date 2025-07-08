@@ -3,16 +3,20 @@
     xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
-    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd">
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd">
 
-    <sqlFile
-        path="BPS-1.sql"
-        relativeToChangelogFile="true"
-        endDelimiter=";" />
+    <changeSet id="1" author="vikash">
+        <sqlFile
+            path="BPS-1.sql"
+            relativeToChangelogFile="true"
+            endDelimiter=";" />
+    </changeSet>
 
-    <sqlFile
-        path="BPS-2.sql"
-        relativeToChangelogFile="true"
-        endDelimiter=";" />
+    <changeSet id="2" author="vikash">
+        <sqlFile
+            path="BPS-2.sql"
+            relativeToChangelogFile="true"
+            endDelimiter=";" />
+    </changeSet>
 
 </databaseChangeLog>
