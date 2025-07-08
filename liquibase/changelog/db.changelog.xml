@@ -19,4 +19,11 @@
             endDelimiter=";" />
     </changeSet>
 
+    <changeSet id="3" author="vikash">
+        <sqlFile
+            path="BPS-3.sql"
+            relativeToChangelogFile="true"
+            endDelimiter=";" />
+    </changeSet>
+
 </databaseChangeLog>
